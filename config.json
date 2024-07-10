@@ -1,0 +1,20 @@
+{
+    "params":
+    {
+        "local_server": "True",
+        "local_uri": "mysql://root:@localhost/codingfreak",
+        "prod_uri": "mysql://root:@localhost/codingfreak",
+        "fb_url": "https://facebook.com/gautamsaman",
+        "tw_url": "https://twitter.com/XnezOptimus",
+        "git_url": "https://github.com/XnezOPtimus",
+        "gmail_user": "gautamsaman664@gmail.com",
+        "gmail_password": "rbty mccb dbxq euig",
+        "about_text": "Hi my name is Saman Gautam and I currently study at Islington College",
+        "no_of_post": 2,
+        "blog_name": "Coding Freak",
+        "login_image": "coding.jpg",
+        "admin_user": "Codingfreak",
+        "admin_password": "Codingfreak",
+        "upload_location": "C:\\Learning\\Python\\pythonProject\\static\\assets\\img"
+    }
+}

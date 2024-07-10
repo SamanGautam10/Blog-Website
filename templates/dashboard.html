@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename = 'assets/img/admin.avif') }}')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="site-heading">
+          <h1>Admin Panel</h1>
+          <span class="subheading">Manage Your Website</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content -->
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+        <h1>
+            Basic Actions
+        </h1>
+
+        <a href="/edit/0">
+            <button class="btn btn-lg btn-primary btn-block">Add Post</button>
+        </a>
+
+        <a href="/logout">
+          <button class="btn btn-lg btn-primary btn-block">Logout</button>
+        </a>
+
+        <hr>
+
+        <h1>Upload A File</h1>
+
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file", name="file1" class="btn">
+          <button type="submit" class="btn btn-lg btn-primary">Upload</button>
+        </form>
+
+      <h1>Post Manager</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>SN</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for post in post_passed %}
+            <tr>
+              <td>{{ post.sn }}</td>
+              <td>{{ post.title }}</td>
+              <td>{{ post.date }}</td>
+              <td>
+                <a href="/edit/{{post.sn}}">
+                  <button class="btn btn-lg btn-primary btn-block">Edit</button>
+                </a>
+              </td>
+              <td>
+                <a href="/delete/{{post.sn}}">
+                  <button class="btn btn-lg btn-primary btn-block">Delete</button>
+                </a>
+              </td>
+              <td>
+                <a href="/post/{{post.slug}}">
+                  <button class="btn btn-lg btn-primary btn-block">View</button>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
